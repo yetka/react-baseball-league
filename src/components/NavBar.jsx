@@ -5,24 +5,24 @@ function NavBar(){
   return (
     <div>
       <nav className="navbar navbar-default">
-        <div className="container-fluid">
+        <div style={{fontSize: '26px'}} className="container-fluid">
           <div className="navbar-header">
-            <Link to='/'>About</Link>
+            <Link style={{color: 'white'}} to='/'>About</Link>
           </div>
           <div className="navbar-header">
-            <Link to='/teams'>Teams</Link>
+            <Link style={{color: 'white'}} to='/teams'>Teams</Link>
           </div>
           <div className="navbar-header">
-            <Link to='/players'>Players</Link>
+            <Link style={{color: 'white'}} to='/players'>Players</Link>
           </div>
           <div className="navbar-header">
-            <Link to='/schedule'>Schedule</Link>
+            <Link style={{color: 'white'}} to='/schedule'>Schedule</Link>
           </div>
           <div className="navbar-header">
-            <Link to='/admin'>Admin</Link>
+            <Link style={{color: 'white'}} to='/admin'>Admin</Link>
           </div>
         </div>
-  </nav>
+      </nav>
     </div>
   );
 }

@@ -22,6 +22,8 @@ function App(){
           background-size: cover
         }
       `}</style>
+      <br></br>
+      <br></br>
       <Header />
       <NavBar />
       <br></br>
