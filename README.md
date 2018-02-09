@@ -8,12 +8,12 @@
 
 This website manages a baseball league in Seattle.
 * User can visit a page to see a welcome information.
-* User can click on Teams link to visit a page contains all teams.
-* Each team has details information such name, manager and list of players.
-* User can click on Players link to visit a page contains all players.
-* Each player has details information such name, age, position, team and Jersey number.
-* User can click on Schedule link to visit a page contains all games.
-* Each game has details information such home team and its scores, away team and its scores, date and field.
+* User can click on Teams link to visit a page which contains all teams.
+* Each team has details such as: name, manager and list of players.
+* User can click on Players link to visit a page which contains all players.
+* Each player has details such as: name, age, position, team and Jersey number.
+* User can click on Schedule link to visit a page which contains all games.
+* Each game has details such as: home team and its scores, away team and its scores, date and field.
 * Administrator can edit and delete data only when is logged in.
 
 ## Setup/Installation Requirements
