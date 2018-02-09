@@ -1,0 +1,48 @@
+# Seattle Baseball League
+
+### It's an application to track baseball league in Seattle.
+
+#### By Malgorzata Haniszewska
+
+## Description
+
+This website manages a baseball league in Seattle.
+* User can visit a page to see a welcome information.
+* User can click on Teams link to visit a page contains all teams.
+* Each team has details information such name, manager and list of players.
+* User can click on Players link to visit a page contains all players.
+* Each player has details information such name, age, position, team and Jersey number.
+* User can click on Schedule link to visit a page contains all games.
+* Each game has details information such home team and its scores, away team and its scores, date and field.
+* Administrator can edit and delete data only when is logged in.
+
+## Setup/Installation Requirements
+
+* Clone GitHub repository to your personal device using terminal command `git clone https://github.com/yetka/react-baseball-league`
+* go to root directory of this project
+* run `npm install`
+* run `npm run start`
+* navigate to `http://localhost:8080/` in the browser; the app will automatically reload if you change any of the source files
+
+## Support and contact details
+
+Contact emails: gosia.haniszewska@gmail.com
+
+## Running linter
+
+Run `npm run lint` to execute tests via [ESLint](https://eslint.org).
+
+## Technologies Used
+
+* HTML
+* CSS
+* JSX
+* Babel
+* Webpack
+* React
+* React-Router
+* ESLint
+
+## License
+
+This project is licensed under the MIT License.
