@@ -25,6 +25,9 @@ function App(){
       <br></br>
       <br></br>
       <Header />
+      <br></br>
+      <br></br>
+      <br></br>
       <NavBar />
       <br></br>
       <br></br>

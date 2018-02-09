@@ -55,7 +55,7 @@ let masterGamesList= [
 function Schedule(){
   return (
     <div>
-      <div style={{color: 'white', backgroundColor: '#990000', opacity: '0.8', filter: 'alpha(opacity=50)', textAlign: 'center', borderStyle: 'solid', borderWidth: '1px 1px 1px 1px', borderColor: 'rgba(1,1,1,1)'}} className="row">
+      <div style={{color: 'white', backgroundColor: '#a52a2a', opacity: '0.8', filter: 'alpha(opacity=50)', textAlign: 'center', borderStyle: 'solid', borderWidth: '1px 1px 1px 1px', borderColor: 'rgba(1,1,1,1)'}} className="row">
         <div className="col-md-2">
           <h4>Home</h4>
         </div>

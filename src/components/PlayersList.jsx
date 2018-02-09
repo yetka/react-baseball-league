@@ -49,10 +49,6 @@ let masterPlayersList= [
 function PlayersList(){
   return (
     <div style={{backgroundColor: 'white', opacity: '0.8', filter: 'alpha(opacity=50)', padding: '20px'}}>
-      <br></br>
-      <h2 style={{textAlign: 'center'}}>Players</h2>
-      <br></br>
-      <br></br>
       <div className="row">
         {masterPlayersList.map((player, i) =>
           <Player

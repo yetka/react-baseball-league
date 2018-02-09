@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function NavBar(){
   return (
     <div>
-      <nav className="navbar navbar-default">
+      <nav style={{backgroundColor: '#a52a2a'}} className="navbar navbar-default">
         <div style={{fontSize: '26px'}} className="container-fluid">
           <div className="navbar-header">
             <Link style={{color: 'white'}} to='/'>About</Link>
