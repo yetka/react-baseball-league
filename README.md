@@ -15,6 +15,7 @@ This website manages a baseball league in Seattle.
 * User can click on Schedule link to visit a page which contains all games.
 * Each game has details such as: home team and its scores, away team and its scores, date and field.
 * Administrator can edit and delete data only when is logged in.
+#### Differences in development process in Angular versus React:
 
 ## Visual Representation of Component Tree
 
