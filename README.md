@@ -18,7 +18,7 @@ This website manages a baseball league in Seattle.
 
 ## Visual Representation of Component Tree
 
-![Visualization](./ReactBaseballLeague.xml)
+![Visualization](./ReactBaseballLeague.jpg)
 
 ## Notes
 
