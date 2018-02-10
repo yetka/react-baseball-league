@@ -6,6 +6,7 @@ import TeamsList from './TeamsList';
 import PlayersList from './PlayersList';
 import Schedule from './Schedule';
 import Admin from './Admin';
+import Error404 from './Error404';
 import { Switch, Route } from 'react-router-dom';
 import Baseball from '../assets/images/baseball.jpg';
 
@@ -37,6 +38,7 @@ function App(){
         <Route path='/players' component={PlayersList} />
         <Route path='/schedule' component={Schedule} />
         <Route path='/admin' component={Admin} />
+        <Route component={Error404} />
       </Switch>
     </div>
   );
