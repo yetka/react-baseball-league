@@ -16,6 +16,17 @@ This website manages a baseball league in Seattle.
 * Each game has details such as: home team and its scores, away team and its scores, date and field.
 * Administrator can edit and delete data only when is logged in.
 
+## Visual Representation of Component Tree
+
+![Visualization](./ReactBaseballLeague.xml)
+
+## Notes
+
+* Think about how to add authentication for Admin
+* How to add filter to display only certain types of objects e.g. by team name in Schedule component
+
+
+
 ## Setup/Installation Requirements
 
 * Clone GitHub repository to your personal device using terminal command `git clone https://github.com/yetka/react-baseball-league`
