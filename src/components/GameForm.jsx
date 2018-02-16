@@ -25,6 +25,7 @@ function GameForm(props) {
   return (
     <div style={{backgroundColor: 'white', padding: '15px', textAlign: 'center'}}>
       <h3>Add New Game</h3>
+      <br></br>
       <form onSubmit={handleNewGameFormSubmission}>
         <input style={{width: '250px', padding: '5px'}}
           type='text'

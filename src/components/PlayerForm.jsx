@@ -24,6 +24,7 @@ function PlayerForm(props) {
   return (
     <div style={{backgroundColor: 'white', padding: '15px', textAlign: 'center'}}>
       <h3>Add New Player</h3>
+      <br></br>
       <form onSubmit={handleNewPlayerFormSubmission}>
         <input style={{width: '250px', padding: '5px'}}
           type='text'
