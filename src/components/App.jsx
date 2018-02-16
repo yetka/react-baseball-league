@@ -167,7 +167,7 @@ class App extends React.Component {
         <NavBar />
         <br></br>
         <br></br>
-        <Switch >
+        <Switch>
           <Route exact path='/' component={Welcome} />
           <Route path='/teams' render={()=><TeamsList teamsList={this.state.masterTeamsList} />} />
           <Route path='/players' render={()=><PlayersList playersList={this.state.masterPlayersList} />} />
