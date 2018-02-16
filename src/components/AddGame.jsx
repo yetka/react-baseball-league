@@ -8,6 +8,7 @@ function AddGame(props) {
   return (
     <div>
       <GameForm onNewGameCreation={props.onNewGameCreation}/>
+      <br></br>
       <Schedule gamesList={props.gamesList}/>
     </div>
   );

@@ -23,39 +23,46 @@ function GameForm(props) {
   }
 
   return (
-    <div>
+    <div style={{backgroundColor: 'white', padding: '15px', textAlign: 'center'}}>
+      <h3>Add New Game</h3>
       <form onSubmit={handleNewGameFormSubmission}>
-        <input
+        <input style={{width: '250px', padding: '5px'}}
           type='text'
           id='team1'
           placeholder='Home'
           ref={(input) => {_team1 = input;}}/>
-        <input
+        <br></br>
+        <input style={{width: '250px', padding: '5px'}}
           type='text'
           id='team1Score'
           placeholder='Home Score'
           ref={(input) => {_team1Score = input;}}/>
-        <input
+        <br></br>
+        <input style={{width: '250px', padding: '5px'}}
           type='text'
           id='team2'
           placeholder='Away'
           ref={(input) => {_team2 = input;}}/>
-        <input
+        <br></br>
+        <input style={{width: '250px', padding: '5px'}}
           type='text'
           id='team2Score'
           placeholder='Away Score'
           ref={(input) => {_team2Score = input;}}/>
-        <input
+        <br></br>
+        <input style={{width: '250px', padding: '5px'}}
           type='text'
           id='date'
           placeholder='Date'
           ref={(input) => {_date = input;}}/>
-        <input
+        <br></br>
+        <input style={{width: '250px', padding: '5px'}}
           type='text'
           id='field'
           placeholder='Field'
           ref={(input) => {_field = input;}}/>
-        <button type='submit'>Add!</button>
+        <br></br>
+        <button style={{margin: '5px', width: '70px', backgroundColor: '#4CAF50'}} type='submit'>Add!</button>
       </form>
     </div>
   );

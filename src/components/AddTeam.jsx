@@ -8,6 +8,7 @@ function AddTeam(props) {
   return (
     <div>
       <TeamForm onNewTeamCreation={props.onNewTeamCreation}/>
+      <br></br>
       <TeamsList teamsList={props.teamsList} />
     </div>
   );

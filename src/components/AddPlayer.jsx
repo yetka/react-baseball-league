@@ -8,6 +8,7 @@ function AddPlayer(props) {
   return (
     <div>
       <PlayerForm onNewPlayerCreation={props.onNewPlayerCreation}/>
+      <br></br>
       <PlayersList playersList={props.playersList} />
     </div>
   );
