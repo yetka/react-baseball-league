@@ -1,44 +1,13 @@
 import React from 'react';
 import Team from './Team';
+import PropTypes from 'prop-types';
 
-let masterTeamsList= [
-  {
-    name: 'Expos',
-    manager: 'Kevin',
-    players: ['Kevin', 'Kam', 'Brian']
-  },
-  {
-    name: 'Tigers',
-    manager: 'Byron',
-    players: ['Mike', 'Gosia', 'Tom']
-  },
-  {
-    name: 'Braves',
-    manager: 'Eric',
-    players: ['Adam', 'Paul', 'Danka']
-  },
-  {
-    name: 'Brewers',
-    manager: 'Nat',
-    players: ['Nat', 'Sam', 'Thomas']
-  },
-  {
-    name: 'Rage',
-    manager: 'Pam',
-    players: ['Cindy', 'Emeshea', 'Ana']
-  },
-  {
-    name: 'Titans',
-    manager: 'Kimi',
-    players: ['Nazar', 'Sylvia', 'Daniel']
-  }
-];
 
-function TeamsList(){
+function TeamsList(props){
   return (
     <div style={{backgroundColor: 'white', opacity: '0.8', filter: 'alpha(opacity=50)', padding: '20px'}}>
       <div className="row">
-        {masterTeamsList.map((team, i) =>
+        {props.teamsList.map((team, i) =>
           <Team
             name={team.name}
             manager={team.manager}
@@ -49,5 +18,10 @@ function TeamsList(){
     </div>
   );
 }
+
+TeamsList.propTypes = {
+  teamsList: PropTypes.array
+};
+
 
 export default TeamsList;
