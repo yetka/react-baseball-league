@@ -7,14 +7,15 @@ function AddGame(props) {
 
   return (
     <div>
-      <GameForm />
+      <GameForm onNewGameCreation={props.onNewGameCreation}/>
       <Schedule gamesList={props.gamesList}/>
     </div>
   );
 }
 
 AddGame.propTypes = {
-  gamesList: PropTypes.array
+  gamesList: PropTypes.array,
+  onNewGameCreation: PropTypes.func
 };
 
 export default AddGame;

@@ -145,6 +145,7 @@ class App extends React.Component {
     };
     this.handleNewTeamCreation = this.handleNewTeamCreation.bind(this);
     this.handleNewPlayerCreation = this.handleNewPlayerCreation.bind(this);
+    this.handleNewGameCreation = this.handleNewGameCreation.bind(this);
   }
 
   handleNewTeamCreation(newTeam){
@@ -158,6 +159,12 @@ class App extends React.Component {
     var newMasterPlayersList = this.state.masterPlayersList.slice();
     newMasterPlayersList.push(newPlayer);
     this.setState({masterPlayersList: newMasterPlayersList});
+  }
+
+  handleNewGameCreation(newGame){
+    var newMasterGamesList = this.state.masterGamesList.slice();
+    newMasterGamesList.push(newGame);
+    this.setState({masterGamesList: newMasterGamesList});
   }
 
   render(){
@@ -188,7 +195,8 @@ class App extends React.Component {
           <Route path='/schedule' render={()=><Schedule gamesList={this.state.masterGamesList} />} />
           <Route path='/admin' render={()=><Admin teamsList={this.state.masterTeamsList} playersList={this.state.masterPlayersList}
             gamesList={this.state.masterGamesList} onNewTeamCreation={this.handleNewTeamCreation}
-            onNewPlayerCreation={this.handleNewPlayerCreation} />}  />
+            onNewPlayerCreation={this.handleNewPlayerCreation}
+            onNewGameCreation={this.handleNewGameCreation} />}  />
           <Route component={Error404} />
         </Switch>
       </div>
