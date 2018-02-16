@@ -17,23 +17,29 @@ function TeamForm(props) {
   }
 
   return (
-    <div>
+    <div style={{backgroundColor: 'white', padding: '15px', textAlign: 'center'}}>
+      <h3>Add New Team</h3>
+      <br></br>
       <form onSubmit={handleNewTeamFormSubmission}>
-        <input
+        <input style={{width: '250px', padding: '5px'}}
           type='text'
           id='name'
           placeholder='Team Name'
           ref={(input) => {_name = input;}}/>
-        <input
+        <br></br>
+        <input style={{width: '250px', padding: '5px'}}
           type='text'
           id='manager'
           placeholder='Team Manager'
           ref={(input) => {_manager = input;}}/>
-        <textarea
+        <br></br>
+        <input style={{width: '250px', padding: '5px'}}
+          type='text'
           id='players'
-          placeholder='Team players'
-          ref={(textarea) => {_players = textarea;}}/>
-        <button type='submit'>Add!</button>
+          placeholder='Team Players'
+          ref={(input) => {_players = input;}}/>
+        <br></br>
+        <button style={{margin: '5px', width: '70px', backgroundColor: '#4CAF50'}} type='submit'>Add!</button>
       </form>
     </div>
   );
