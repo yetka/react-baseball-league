@@ -9,6 +9,13 @@ class Admin extends React.Component {
     this.state = {
       authentication: false
     };
+    this.handleAuthenticationFormSubmission = this.handleAuthenticationFormSubmission.bind(this);
+  }
+
+  handleAuthenticationFormSubmission(login){
+    if ((login.name === 'Admin') && (login.password === 'epicodus')) {
+      this.setState({authentication: true});
+    }
   }
 
   render(){
@@ -16,7 +23,7 @@ class Admin extends React.Component {
     if (this.state.authentication){
       currentlyVisibleContent = <AdminAccessAllowed />;
     } else {
-      currentlyVisibleContent = <AdminAccessDenied />;
+      currentlyVisibleContent = <AdminAccessDenied onAuthenticationFormSubmission={this.handleAuthenticationFormSubmission}/>;
     }
     return (
       <div style={{backgroundColor: 'white', opacity: '0.8', filter: 'alpha(opacity=50)', padding: '20px', textAlign: 'center'}}>

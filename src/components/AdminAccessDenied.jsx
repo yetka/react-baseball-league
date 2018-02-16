@@ -1,13 +1,43 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function AdminAccessDenied() {
+function AdminAccessDenied(props) {
+
+  let _name = null;
+  let _password = null;
+
+
+
+  function handleAuthenticationFormSubmission(event) {
+    event.preventDefault();
+    props.onAuthenticationFormSubmission({name: _name.value, password: _password.value});
+    _name.value = '';
+    _password.value = '';
+  }
 
   return (
     <div>
-      <h1>access denied</h1>
-      <p>form to provide password</p>
+      <h1>Access Denied!</h1>
+      <h4>Please provide your name and password</h4>
+      <form onSubmit={handleAuthenticationFormSubmission}>
+        <input
+          type='text'
+          id='name'
+          placeholder='Your Name'
+          ref={(input) => {_name = input;}}/>
+        <input
+          type='text'
+          id='password'
+          placeholder='Your Password'
+          ref={(input) => {_password = input;}}/>
+        <button type='submit'>Submit!</button>
+      </form>
     </div>
   );
 }
+
+AdminAccessDenied.propTypes = {
+  onAuthenticationFormSubmission: PropTypes.func
+};
 
 export default AdminAccessDenied;
