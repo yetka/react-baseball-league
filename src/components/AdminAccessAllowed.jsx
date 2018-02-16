@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 import AddPlayer from './AddPlayer';
 import AddTeam from './AddTeam';
 import AddGame from './AddGame';
+import PropTypes from 'prop-types';
 
-function AdminAccessAllowed() {
+function AdminAccessAllowed(props) {
 
   return (
     <div className="row">
@@ -21,13 +22,19 @@ function AdminAccessAllowed() {
       </div>
       <div className="col-md-10">
         <Switch>
-          <Route exact path='/admin/add-player' component={AddPlayer} />
-          <Route exact path='/admin/add-team' component={AddTeam} />
-          <Route exact path='/admin/add-game' component={AddGame} />
+          <Route exact path='/admin/add-player'render={()=><AddPlayer playersList={props.playersList} />} />
+          <Route exact path='/admin/add-team'render={()=><AddTeam teamsList={props.teamsList} />} />
+          <Route exact path='/admin/add-game'render={()=><AddGame gamesList={props.gamesList} />} />
         </Switch>
       </div>
     </div>
   );
 }
+
+AdminAccessAllowed.propTypes = {
+  teamsList: PropTypes.array,
+  playersList: PropTypes.array,
+  gamesList: PropTypes.array
+};
 
 export default AdminAccessAllowed;

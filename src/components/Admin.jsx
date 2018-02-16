@@ -1,6 +1,7 @@
 import React from 'react';
 import AdminAccessDenied from './AdminAccessDenied';
 import AdminAccessAllowed from './AdminAccessAllowed';
+import PropTypes from 'prop-types';
 
 class Admin extends React.Component {
 
@@ -21,7 +22,7 @@ class Admin extends React.Component {
   render(){
     let currentlyVisibleContent = null;
     if (this.state.authentication){
-      currentlyVisibleContent = <AdminAccessAllowed />;
+      currentlyVisibleContent = <AdminAccessAllowed teamsList={this.props.teamsList} playersList={this.props.playersList} gamesList={this.props.gamesList}/>;
     } else {
       currentlyVisibleContent = <AdminAccessDenied onAuthenticationFormSubmission={this.handleAuthenticationFormSubmission}/>;
     }
@@ -32,5 +33,11 @@ class Admin extends React.Component {
     );
   }
 }
+
+Admin.propTypes = {
+  teamsList: PropTypes.array,
+  playersList: PropTypes.array,
+  gamesList: PropTypes.array
+};
 
 export default Admin;

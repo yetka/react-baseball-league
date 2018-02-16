@@ -1,12 +1,19 @@
 import React from 'react';
+import TeamsList from './TeamsList';
+import PropTypes from 'prop-types';
 
-function AddTeam() {
+
+function AddTeam(props) {
 
   return (
     <div>
-      <p>add team</p>
+      <TeamsList teamsList={props.teamsList}/>
     </div>
   );
 }
+
+AddTeam.propTypes = {
+  teamsList: PropTypes.array
+};
 
 export default AddTeam;

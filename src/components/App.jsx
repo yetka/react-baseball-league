@@ -172,7 +172,8 @@ class App extends React.Component {
           <Route path='/teams' render={()=><TeamsList teamsList={this.state.masterTeamsList} />} />
           <Route path='/players' render={()=><PlayersList playersList={this.state.masterPlayersList} />} />
           <Route path='/schedule' render={()=><Schedule gamesList={this.state.masterGamesList} />} />
-          <Route path='/admin' component={Admin} />
+          <Route path='/admin' render={()=><Admin teamsList={this.state.masterTeamsList} playersList={this.state.masterPlayersList}
+            gamesList={this.state.masterGamesList} />}  />
           <Route component={Error404} />
         </Switch>
       </div>

@@ -1,12 +1,18 @@
 import React from 'react';
+import PlayersList from './PlayersList';
+import PropTypes from 'prop-types';
 
-function AddPlayer() {
+function AddPlayer(props) {
 
   return (
     <div>
-      <p>add player</p>
+      <PlayersList playersList={props.playersList} />
     </div>
   );
 }
+
+AddPlayer.propTypes = {
+  playersList: PropTypes.array
+};
 
 export default AddPlayer;
