@@ -29,7 +29,7 @@ class Admin extends React.Component {
       currentlyVisibleContent = <AdminAccessDenied onAuthenticationFormSubmission={this.handleAuthenticationFormSubmission}/>;
     }
     return (
-      <div style={{backgroundColor: 'white', opacity: '0.8', filter: 'alpha(opacity=50)', padding: '20px', textAlign: 'center'}}>
+      <div>
         {currentlyVisibleContent}
       </div>
     );

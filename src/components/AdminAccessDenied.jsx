@@ -16,7 +16,7 @@ function AdminAccessDenied(props) {
   }
 
   return (
-    <div style={{margin: '20px'}}>
+    <div style={{backgroundColor: 'white', opacity: '0.8', filter: 'alpha(opacity=50)', padding: '20px', textAlign: 'center'}}>
       <h1>Access Denied!</h1>
       <br></br>
       <h4>Please provide your name and password</h4>

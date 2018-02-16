@@ -10,15 +10,15 @@ function AdminAccessAllowed(props) {
 
   return (
     <div className="row">
-      <div className="col-md-2">
+      <div style={{backgroundColor: '#a52a2a', padding: '20px',fontSize: '18px', textAlign: 'center'}} className="col-md-2">
         <h5><strong>Players:</strong></h5>
-        <p><Link to='/admin/add-player'>Add player</Link></p>
+        <p><Link style={{color: 'white'}} to='/admin/add-player'>Add player</Link></p>
         <hr></hr>
         <h5><strong>Teams:</strong></h5>
-        <p><Link to='/admin/add-team'>Add team</Link></p>
+        <p><Link style={{color: 'white'}} to='/admin/add-team'>Add team</Link></p>
         <hr></hr>
         <h5><strong>Games:</strong></h5>
-        <p><Link to='/admin/add-game'>Add game</Link></p>
+        <p><Link style={{color: 'white'}} to='/admin/add-game'>Add game</Link></p>
       </div>
       <div className="col-md-10">
         <Switch>
