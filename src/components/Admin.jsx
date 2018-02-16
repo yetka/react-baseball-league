@@ -22,7 +22,7 @@ class Admin extends React.Component {
   render(){
     let currentlyVisibleContent = null;
     if (this.state.authentication){
-      currentlyVisibleContent = <AdminAccessAllowed teamsList={this.props.teamsList} playersList={this.props.playersList} gamesList={this.props.gamesList}/>;
+      currentlyVisibleContent = <AdminAccessAllowed teamsList={this.props.teamsList} playersList={this.props.playersList} gamesList={this.props.gamesList} onNewTeamCreation={this.props.onNewTeamCreation}/>;
     } else {
       currentlyVisibleContent = <AdminAccessDenied onAuthenticationFormSubmission={this.handleAuthenticationFormSubmission}/>;
     }
@@ -37,7 +37,8 @@ class Admin extends React.Component {
 Admin.propTypes = {
   teamsList: PropTypes.array,
   playersList: PropTypes.array,
-  gamesList: PropTypes.array
+  gamesList: PropTypes.array,
+  onNewTeamCreation: PropTypes.func
 };
 
 export default Admin;
