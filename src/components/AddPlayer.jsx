@@ -7,14 +7,15 @@ function AddPlayer(props) {
 
   return (
     <div>
-      <PlayerForm />
+      <PlayerForm onNewPlayerCreation={props.onNewPlayerCreation}/>
       <PlayersList playersList={props.playersList} />
     </div>
   );
 }
 
 AddPlayer.propTypes = {
-  playersList: PropTypes.array
+  playersList: PropTypes.array,
+  onNewPlayerCreation: PropTypes.func
 };
 
 export default AddPlayer;
