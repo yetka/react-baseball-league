@@ -21,6 +21,10 @@ This website manages a baseball league in Seattle.
 
 ![Visualization](./ReactBaseballLeague.jpg)
 
+## Visual Representation of Component Tree After Adding State
+
+![NewVisualization](./component-tree-state-version.jpg)
+
 ## Notes
 
 * Think about how to add authentication for Admin
