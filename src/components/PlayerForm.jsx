@@ -22,34 +22,40 @@ function PlayerForm(props) {
   }
 
   return (
-    <div>
+    <div style={{backgroundColor: 'white', padding: '15px', textAlign: 'center'}}>
+      <h3>Add New Player</h3>
       <form onSubmit={handleNewPlayerFormSubmission}>
-        <input
+        <input style={{width: '250px', padding: '5px'}}
           type='text'
           id='name'
           placeholder='Player Name'
           ref={(input) => {_name = input;}}/>
-        <input
+        <br></br>
+        <input style={{width: '250px', padding: '5px'}}
           type='text'
           id='age'
           placeholder='Player Age'
           ref={(input) => {_age = input;}}/>
-        <input
+        <br></br>
+        <input style={{width: '250px', padding: '5px'}}
           type='text'
           id='position'
           placeholder='Player Position'
           ref={(input) => {_position = input;}}/>
-        <input
+        <br></br>
+        <input style={{width: '250px', padding: '5px'}}
           type='text'
           id='team'
           placeholder='Player Team'
           ref={(input) => {_team = input;}}/>
-        <input
+        <br></br>
+        <input style={{width: '250px', padding: '5px'}}
           type='text'
           id='jerseyNumber'
           placeholder='Player Jersey Number'
           ref={(input) => {_jerseyNumber = input;}}/>
-        <button type='submit'>Add!</button>
+        <br></br>
+        <button style={{margin: '5px', width: '70px', backgroundColor: '#4CAF50'}} type='submit'>Add!</button>
       </form>
     </div>
   );
