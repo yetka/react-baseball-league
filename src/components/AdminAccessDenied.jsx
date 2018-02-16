@@ -16,22 +16,25 @@ function AdminAccessDenied(props) {
   }
 
   return (
-    <div>
+    <div style={{margin: '20px'}}>
       <h1>Access Denied!</h1>
+      <br></br>
       <h4>Please provide your name and password</h4>
+      <br></br>
       <form onSubmit={handleAuthenticationFormSubmission}>
-        <input
+        <input style={{padding: '5px'}}
           type='text'
           id='name'
           placeholder='Your Name'
           ref={(input) => {_name = input;}}/>
-        <input
+        <input style={{padding: '5px'}}
           type='text'
           id='password'
           placeholder='Your Password'
           ref={(input) => {_password = input;}}/>
-        <button type='submit'>Submit!</button>
+        <button style={{padding: '5px'}} type='submit'>Submit!</button>
       </form>
+      <br></br>
     </div>
   );
 }
