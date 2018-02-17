@@ -7,7 +7,7 @@ function Player(props){
     props.onDeletePlayer(props.id);
   }
   const playerInformation =
-    <div style={{padding: '50px'}} className="col-md-4">
+    <div>
       <div className="row">
         <div className="col-md-4">
           <img style={{width: '90px'}} src={Shiluette} alt="symbol"></img>
@@ -28,7 +28,7 @@ function Player(props){
 
   if (props.currentRouterPath === '/admin/edit-player'){
     return (
-      <div>
+      <div style={{padding: '50px'}} className="col-md-4">
         {playerInformation}
         <button>Edit</button>
         <button onClick={() => {handleDeletePlayerWhenClicked();}}>Delete</button>
@@ -36,7 +36,7 @@ function Player(props){
     );
   } else {
     return (
-      <div>
+      <div style={{padding: '50px'}} className="col-md-4">
         {playerInformation}
       </div>
     );

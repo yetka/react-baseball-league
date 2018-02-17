@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 
 function PlayersList(props){
   return (
-    <div style={{backgroundColor: 'white', opacity: '0.8', filter: 'alpha(opacity=50)', padding: '20px'}}>
-      <div className="row">
+    <div>
+      <div style={{backgroundColor: 'white', opacity: '0.8', filter: 'alpha(opacity=50)', padding: '10px'}} className="row">
         {props.playersList.map((player, i) =>
           <Player
             name={player.name}
