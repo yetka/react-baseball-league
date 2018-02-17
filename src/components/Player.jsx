@@ -6,6 +6,7 @@ function Player(props){
   function handleDeletePlayerWhenClicked() {
     props.onDeletePlayer(props.id);
   }
+
   const playerInformation =
     <div>
       <div className="row">
@@ -25,7 +26,7 @@ function Player(props){
         <h5><strong>Jersey Number: </strong>{props.jerseyNumber}</h5>
       </div>
     </div>;
-
+    
   if (props.currentRouterPath === '/admin/edit-player'){
     return (
       <div style={{padding: '50px'}} className="col-md-4">

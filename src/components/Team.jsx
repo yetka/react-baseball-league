@@ -8,7 +8,7 @@ function Team(props){
   }
 
   const teamInformation =
-    <div style={{padding: '50px'}} className="col-md-4">
+    <div>
       <div className="row">
         <div className="col-md-4">
           <img style={{width: '90px'}} src={BaseballSymbol} alt="symbol"></img>
@@ -32,7 +32,7 @@ function Team(props){
 
   if (props.currentRouterPath === '/admin/edit-team'){
     return (
-      <div>
+      <div style={{padding: '50px'}} className="col-md-4">
         {teamInformation}
         <button>Edit</button>
         <button onClick={() => {handleDeleteTeamWhenClicked();}}>Delete</button>
@@ -40,7 +40,7 @@ function Team(props){
     );
   } else {
     return (
-      <div>
+      <div style={{padding: '50px'}} className="col-md-4">
         {teamInformation}
       </div>
     );
