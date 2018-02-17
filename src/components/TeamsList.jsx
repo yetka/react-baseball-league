@@ -4,16 +4,18 @@ import PropTypes from 'prop-types';
 
 
 function TeamsList(props){
-
+  console.log(props);
   return (
     <div style={{backgroundColor: 'white', opacity: '0.8', filter: 'alpha(opacity=50)', padding: '20px'}}>
       <div className="row">
-        {props.teamsList.map((team, i) =>
+        {props.teamsList.map((team, key) =>
           <Team
             name={team.name}
             manager={team.manager}
             players={team.players}
-            key={i}
+            id={team.id}
+            key={team.id}
+            onDeleteTeam={props.onDeleteTeam}
             currentRouterPath={props.currentRouterPath}/>
         )}
       </div>
@@ -23,7 +25,8 @@ function TeamsList(props){
 
 TeamsList.propTypes = {
   teamsList: PropTypes.array,
-  currentRouterPath: PropTypes.string
+  currentRouterPath: PropTypes.string,
+  onDeleteTeam: PropTypes.func
 };
 
 

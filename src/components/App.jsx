@@ -15,39 +15,45 @@ import PropTypes from 'prop-types';
 class App extends React.Component {
 
   constructor(props) {
-    
+
     super(props);
     this.state = {
       masterTeamsList: [
         {
           name: 'Expos',
           manager: 'Kevin',
-          players: ['Kevin', 'Kam', 'Brian']
+          players: ['Kevin', 'Kam', 'Brian'],
+          id: '1'
         },
         {
           name: 'Tigers',
           manager: 'Byron',
-          players: ['Mike', 'Gosia', 'Tom']
+          players: ['Mike', 'Gosia', 'Tom'],
+          id: '2'
         },
         {
           name: 'Braves',
           manager: 'Eric',
-          players: ['Adam', 'Paul', 'Danka']
+          players: ['Adam', 'Paul', 'Danka'],
+          id: '3'
         },
         {
           name: 'Brewers',
           manager: 'Nat',
-          players: ['Nat', 'Sam', 'Thomas']
+          players: ['Nat', 'Sam', 'Thomas'],
+          id: '4'
         },
         {
           name: 'Rage',
           manager: 'Pam',
-          players: ['Cindy', 'Emeshea', 'Ana']
+          players: ['Cindy', 'Emeshea', 'Ana'],
+          id: '5'
         },
         {
           name: 'Titans',
           manager: 'Kimi',
-          players: ['Nazar', 'Sylvia', 'Daniel']
+          players: ['Nazar', 'Sylvia', 'Daniel'],
+          id: '6'
         }
       ],
       masterPlayersList: [
@@ -148,6 +154,7 @@ class App extends React.Component {
     this.handleNewTeamCreation = this.handleNewTeamCreation.bind(this);
     this.handleNewPlayerCreation = this.handleNewPlayerCreation.bind(this);
     this.handleNewGameCreation = this.handleNewGameCreation.bind(this);
+    this.handleDeleteTeam = this.handleDeleteTeam.bind(this);
   }
 
   handleNewTeamCreation(newTeam){
@@ -167,6 +174,18 @@ class App extends React.Component {
     var newMasterGamesList = this.state.masterGamesList.slice();
     newMasterGamesList.push(newGame);
     this.setState({masterGamesList: newMasterGamesList});
+  }
+
+  handleDeleteTeam(currentTeamId){
+    console.log(currentTeamId);
+    var newMasterTeamsList = [];
+    var copyMasterTeamsList = this.state.masterTeamsList.slice();
+    copyMasterTeamsList.forEach((team) => {
+      if (team.id !== currentTeamId) {
+        newMasterTeamsList.push(team);
+      }
+    });
+    this.setState({masterTeamsList: newMasterTeamsList});
   }
 
   render(){
@@ -199,7 +218,8 @@ class App extends React.Component {
             gamesList={this.state.masterGamesList} onNewTeamCreation={this.handleNewTeamCreation}
             onNewPlayerCreation={this.handleNewPlayerCreation}
             onNewGameCreation={this.handleNewGameCreation}
-            currentRouterPath={props.location.pathname}/>}  />
+            currentRouterPath={props.location.pathname}
+            onDeleteTeam={this.handleDeleteTeam} />}  />
           <Route component={Error404} />
         </Switch>
       </div>

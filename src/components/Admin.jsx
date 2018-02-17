@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 class Admin extends React.Component {
 
   constructor(props) {
+    console.log(props);
     super(props);
     this.state = {
       authentication: false
@@ -25,7 +26,8 @@ class Admin extends React.Component {
       currentlyVisibleContent = <AdminAccessAllowed teamsList={this.props.teamsList} playersList={this.props.playersList} gamesList={this.props.gamesList} onNewTeamCreation={this.props.onNewTeamCreation}
         onNewPlayerCreation={this.props.onNewPlayerCreation}
         onNewGameCreation={this.props.onNewGameCreation}
-        currentRouterPath={this.props.currentRouterPath} />;
+        currentRouterPath={this.props.currentRouterPath}
+        onDeleteTeam={this.props.onDeleteTeam} />;
     } else {
       currentlyVisibleContent = <AdminAccessDenied onAuthenticationFormSubmission={this.handleAuthenticationFormSubmission}/>;
     }
@@ -44,7 +46,8 @@ Admin.propTypes = {
   onNewTeamCreation: PropTypes.func,
   onNewPlayerCreation: PropTypes.func,
   onNewGameCreation: PropTypes.func,
-  currentRouterPath: PropTypes.string
+  currentRouterPath: PropTypes.string,
+  onDeleteTeam: PropTypes.func
 };
 
 export default Admin;

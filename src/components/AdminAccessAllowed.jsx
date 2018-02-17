@@ -10,7 +10,7 @@ import EditGame from './EditGame';
 import PropTypes from 'prop-types';
 
 function AdminAccessAllowed(props) {
-
+  console.log(props);
   return (
     <div className="row">
       <div style={{backgroundColor: '#a52a2a', padding: '20px',fontSize: '18px', textAlign: 'center'}} className="col-md-2">
@@ -30,18 +30,14 @@ function AdminAccessAllowed(props) {
         <Switch>
           <Route exact path='/admin/add-player'render={()=><AddPlayer playersList={props.playersList}
             onNewPlayerCreation={props.onNewPlayerCreation} />} />
-          <Route exact path='/admin/add-team'render={()=><AddTeam teamsList={props.teamsList} onNewTeamCreation={props.onNewTeamCreation}/>} />
+          <Route exact path='/admin/add-team'render={()=><AddTeam teamsList={props.teamsList} onNewTeamCreation={props.onNewTeamCreation}  />} />
           <Route exact path='/admin/add-game'render={()=><AddGame gamesList={props.gamesList}
             onNewGameCreation={props.onNewGameCreation} />} />
-
           <Route exact path='/admin/edit-player'render={()=><EditPlayer playersList={props.playersList}
-
             currentRouterPath={props.currentRouterPath} />} />
           <Route exact path='/admin/edit-team'render={()=><EditTeam teamsList={props.teamsList}
-
-            currentRouterPath={props.currentRouterPath} />} />
+            currentRouterPath={props.currentRouterPath} onDeleteTeam={props.onDeleteTeam} />} />
           <Route exact path='/admin/edit-game'render={()=><EditGame gamesList={props.gamesList}
-
             currentRouterPath={props.currentRouterPath} />} />
         </Switch>
       </div>
@@ -56,7 +52,8 @@ AdminAccessAllowed.propTypes = {
   onNewTeamCreation: PropTypes.func,
   onNewPlayerCreation: PropTypes.func,
   onNewGameCreation: PropTypes.func,
-  currentRouterPath: PropTypes.string
+  currentRouterPath: PropTypes.string,
+  onDeleteTeam: PropTypes.func
 };
 
 export default AdminAccessAllowed;

@@ -3,6 +3,11 @@ import PropTypes from 'prop-types';
 import BaseballSymbol from '../assets/images/symbol.jpg';
 
 function Team(props){
+  console.log(props);
+  function handleDeleteTeamWhenClicked() {
+    // console.log(props);
+    props.onDeleteTeam(props.id);
+  }
 
   const teamInformation =
     <div style={{padding: '50px'}} className="col-md-4">
@@ -32,7 +37,7 @@ function Team(props){
       <div>
         {teamInformation}
         <button>Edit</button>
-        <button>Delete</button>
+        <button onClick={() => {handleDeleteTeamWhenClicked();}}>Delete</button>
       </div>
     );
   } else {
@@ -48,7 +53,8 @@ Team.propTypes = {
   name: PropTypes.string,
   manager: PropTypes.string,
   players: PropTypes.arrayOf(PropTypes.string),
-  currentRouterPath: PropTypes.string
+  currentRouterPath: PropTypes.string,
+  onDeleteTeam: PropTypes.func
 };
 
 export default Team;
