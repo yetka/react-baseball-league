@@ -31,9 +31,13 @@ function Game(props){
   if (props.currentRouterPath === '/admin/edit-game'){
     return (
       <div>
-        {gameInformation}
-        <button>Edit</button>
-        <button onClick={() => {handleDeleteGameWhenClicked();}}>Delete</button>
+        <div>
+          {gameInformation}
+        </div>
+        <div>
+          <button type="button" className="btn btn-warning">Edit</button>
+          <button onClick={() => {handleDeleteGameWhenClicked();}} type="button" className="btn btn-danger">Delete</button>
+        </div>
       </div>
     );
   } else {

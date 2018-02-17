@@ -26,13 +26,13 @@ function Player(props){
         <h5><strong>Jersey Number: </strong>{props.jerseyNumber}</h5>
       </div>
     </div>;
-    
+
   if (props.currentRouterPath === '/admin/edit-player'){
     return (
       <div style={{padding: '50px'}} className="col-md-4">
         {playerInformation}
-        <button>Edit</button>
-        <button onClick={() => {handleDeletePlayerWhenClicked();}}>Delete</button>
+        <button type="button" className="btn btn-warning">Edit</button>
+        <button onClick={() => {handleDeletePlayerWhenClicked();}} type="button" className="btn btn-danger">Delete</button>
       </div>
     );
   } else {

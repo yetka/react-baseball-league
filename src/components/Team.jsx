@@ -34,8 +34,8 @@ function Team(props){
     return (
       <div style={{padding: '50px'}} className="col-md-4">
         {teamInformation}
-        <button>Edit</button>
-        <button onClick={() => {handleDeleteTeamWhenClicked();}}>Delete</button>
+        <button type="button" className="btn btn-warning">Edit</button>
+        <button onClick={() => {handleDeleteTeamWhenClicked();}} type="button" className="btn btn-danger">Delete</button>
       </div>
     );
   } else {

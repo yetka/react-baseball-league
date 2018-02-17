@@ -39,7 +39,7 @@ function TeamForm(props) {
           placeholder='Team Players'
           ref={(input) => {_players = input;}}/>
         <br></br>
-        <button style={{margin: '5px', width: '70px', backgroundColor: '#4CAF50'}} type='submit'>Add!</button>
+        <button style={{margin: '5px', width: '70px', backgroundColor: '#4CAF50'}} type='submit'className="btn btn-success">Add!</button>
       </form>
     </div>
   );
