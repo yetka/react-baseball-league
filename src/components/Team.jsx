@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import BaseballSymbol from '../assets/images/symbol.jpg';
 
 function Team(props){
-  return (
+    console.log(props);
+  const teamInformation =
     <div style={{padding: '50px'}} className="col-md-4">
       <div className="row">
         <div className="col-md-4">
@@ -24,14 +25,30 @@ function Team(props){
           )}
         </ul>
       </div>
-    </div>
-  );
+    </div>;
+
+  if (props.currentRouterPath === '/admin/edit-team'){
+    return (
+      <div>
+        {teamInformation}
+        <h1>admintest</h1>
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        {teamInformation}
+        <h1>test</h1>
+      </div>
+    );
+  }
 }
 
 Team.propTypes = {
   name: PropTypes.string,
   manager: PropTypes.string,
-  players: PropTypes.arrayOf(PropTypes.string)
+  players: PropTypes.arrayOf(PropTypes.string),
+  currentRouterPath: PropTypes.string
 };
 
 export default Team;

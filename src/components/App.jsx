@@ -9,11 +9,13 @@ import Admin from './Admin';
 import Error404 from './Error404';
 import { Switch, Route } from 'react-router-dom';
 import Baseball from '../assets/images/baseball.jpg';
+import PropTypes from 'prop-types';
 
 
 class App extends React.Component {
 
   constructor(props) {
+    
     super(props);
     this.state = {
       masterTeamsList: [
@@ -193,15 +195,19 @@ class App extends React.Component {
           <Route path='/teams' render={()=><TeamsList teamsList={this.state.masterTeamsList} />} />
           <Route path='/players' render={()=><PlayersList playersList={this.state.masterPlayersList} />} />
           <Route path='/schedule' render={()=><Schedule gamesList={this.state.masterGamesList} />} />
-          <Route path='/admin' render={()=><Admin teamsList={this.state.masterTeamsList} playersList={this.state.masterPlayersList}
+          <Route path='/admin' render={(props)=><Admin teamsList={this.state.masterTeamsList} playersList={this.state.masterPlayersList}
             gamesList={this.state.masterGamesList} onNewTeamCreation={this.handleNewTeamCreation}
             onNewPlayerCreation={this.handleNewPlayerCreation}
-            onNewGameCreation={this.handleNewGameCreation} />}  />
+            onNewGameCreation={this.handleNewGameCreation}
+            currentRouterPath={props.location.pathname}/>}  />
           <Route component={Error404} />
         </Switch>
       </div>
     );
   }
 }
+App.propTypes = {
+  location: PropTypes.object
+};
 
 export default App;
