@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import BaseballSymbol from '../assets/images/symbol.jpg';
 
 function Team(props){
-    console.log(props);
+  
   const teamInformation =
     <div style={{padding: '50px'}} className="col-md-4">
       <div className="row">
