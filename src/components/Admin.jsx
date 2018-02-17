@@ -27,7 +27,9 @@ class Admin extends React.Component {
         onNewPlayerCreation={this.props.onNewPlayerCreation}
         onNewGameCreation={this.props.onNewGameCreation}
         currentRouterPath={this.props.currentRouterPath}
-        onDeleteTeam={this.props.onDeleteTeam} />;
+        onDeleteTeam={this.props.onDeleteTeam}
+        onDeletePlayer={this.props.onDeletePlayer}
+        onDeleteGame={this.props.onDeleteGame} />;
     } else {
       currentlyVisibleContent = <AdminAccessDenied onAuthenticationFormSubmission={this.handleAuthenticationFormSubmission}/>;
     }
@@ -47,7 +49,9 @@ Admin.propTypes = {
   onNewPlayerCreation: PropTypes.func,
   onNewGameCreation: PropTypes.func,
   currentRouterPath: PropTypes.string,
-  onDeleteTeam: PropTypes.func
+  onDeleteTeam: PropTypes.func,
+  onDeletePlayer: PropTypes.func,
+  onDeleteGame: PropTypes.func
 };
 
 export default Admin;

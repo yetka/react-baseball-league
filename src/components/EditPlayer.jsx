@@ -7,14 +7,15 @@ function EditPlayer(props){
   return (
     <div>
       <PlayersList playersList={props.playersList}
-        currentRouterPath={props.currentRouterPath} />
+        currentRouterPath={props.currentRouterPath}onDeletePlayer={props.onDeletePlayer}/>
     </div>
   );
 }
 
 EditPlayer.propTypes = {
   playersList: PropTypes.array,
-  currentRouterPath: PropTypes.string
+  currentRouterPath: PropTypes.string,
+  onDeletePlayer: PropTypes.func
 };
 
 export default EditPlayer;

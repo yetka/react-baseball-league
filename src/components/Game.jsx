@@ -2,7 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Game(props){
-  return (
+  function handleDeleteGameWhenClicked() {
+    props.onDeleteGame(props.id);
+  }
+
+  const gameInformation =
     <div style={{backgroundColor: 'white', opacity: '0.8', filter: 'alpha(opacity=50)', textAlign: 'center', borderStyle: 'solid', borderWidth: '1px 1px 1px 1px', borderColor: 'rgba(1,1,1,1)'}} className="row">
       <div className="col-md-2">
         <h5>{props.team1}</h5>
@@ -22,8 +26,23 @@ function Game(props){
       <div className="col-md-3">
         <h5>{props.field}</h5>
       </div>
-    </div>
-  );
+    </div>;
+
+  if (props.currentRouterPath === '/admin/edit-game'){
+    return (
+      <div>
+        {gameInformation}
+        <button>Edit</button>
+        <button onClick={() => {handleDeleteGameWhenClicked();}}>Delete</button>
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        {gameInformation}
+      </div>
+    );
+  }
 }
 
 Game.propTypes = {
@@ -32,7 +51,8 @@ Game.propTypes = {
   team2: PropTypes.string,
   team2Score: PropTypes.number,
   date: PropTypes.string,
-  field: PropTypes.string
+  field: PropTypes.string,
+  onDeleteGame: PropTypes.func
 };
 
 export default Game;

@@ -35,7 +35,9 @@ function Schedule(props){
             team2Score={game.team2Score}
             date={game.date}
             field={game.field}
-            key={i}
+            id={game.id}
+            key={game.id}
+            onDeleteGame={props.onDeleteGame}
             currentRouterPath={props.currentRouterPath}/>
         )}
       </div>
@@ -45,7 +47,8 @@ function Schedule(props){
 
 Schedule.propTypes = {
   gamesList: PropTypes.array,
-  currentRouterPath: PropTypes.string
+  currentRouterPath: PropTypes.string,
+  onDeleteGame: PropTypes.func
 };
 
 export default Schedule;

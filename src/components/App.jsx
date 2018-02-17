@@ -62,42 +62,48 @@ class App extends React.Component {
           age: 27,
           position: 'Infield',
           team: 'Expos',
-          jerseyNumber: 10
+          jerseyNumber: 10,
+          id: '1'
         },
         {
           name: 'Mike',
           age: 26,
           position: '0utfield',
           team: 'Brewers',
-          jerseyNumber: 3
+          jerseyNumber: 3,
+          id: '2'
         },
         {
           name: 'Kam',
           age: 28,
           position: 'Pitcher',
           team: 'Expos',
-          jerseyNumber: 12
+          jerseyNumber: 12,
+          id: '3'
         },
         {
           name: 'Tyler',
           age: 30,
           position: 'Catcher',
           team: 'Braves',
-          jerseyNumber: 16
+          jerseyNumber: 16,
+          id: '4'
         },
         {
           name: 'Brian',
           age: 30,
           position: 'Pitcher',
           team: 'Expos',
-          jerseyNumber: 5
+          jerseyNumber: 5,
+          id: '5'
         },
         {
           name: 'Ana',
           age: 25,
           position: 'Catcher',
           team: 'Expos',
-          jerseyNumber: 7
+          jerseyNumber: 7,
+          id: '6'
         }
       ],
       masterGamesList: [
@@ -107,7 +113,8 @@ class App extends React.Component {
           team2: 'Braves',
           team2Score: 0,
           date: '01-24-2018',
-          field: 'Ballard'
+          field: 'Ballard',
+          id: '1'
         },
         {
           team1: 'Expos',
@@ -115,7 +122,8 @@ class App extends React.Component {
           team2: 'Tigers',
           team2Score: 7,
           date: '02-24-2017',
-          field: 'Edmonds'
+          field: 'Edmonds',
+          id: '2'
         },
         {
           team1: 'Titans',
@@ -123,7 +131,8 @@ class App extends React.Component {
           team2: 'Tigers',
           team2Score: 4,
           date: '01-20-2018',
-          field: 'Shoreline'
+          field: 'Shoreline',
+          id: '3'
         },
         {
           team1: 'Tigers',
@@ -131,7 +140,8 @@ class App extends React.Component {
           team2: 'Titans',
           team2Score: 7,
           date: '01-13-2017',
-          field: 'Edmonds'
+          field: 'Edmonds',
+          id: '4'
         },
         {
           team1: 'Rage',
@@ -139,7 +149,8 @@ class App extends React.Component {
           team2: 'Titans',
           team2Score: 2,
           date: '07-04-2017',
-          field: 'Ballard'
+          field: 'Ballard',
+          id: '5'
         },
         {
           team1: 'Tigers',
@@ -147,7 +158,8 @@ class App extends React.Component {
           team2: 'Expos',
           team2Score: 4,
           date: '05-05-2017',
-          field: 'Safeco'
+          field: 'Safeco',
+          id: '6'
         }
       ]
     };
@@ -155,6 +167,8 @@ class App extends React.Component {
     this.handleNewPlayerCreation = this.handleNewPlayerCreation.bind(this);
     this.handleNewGameCreation = this.handleNewGameCreation.bind(this);
     this.handleDeleteTeam = this.handleDeleteTeam.bind(this);
+    this.handleDeletePlayer = this.handleDeletePlayer.bind(this);
+    this.handleDeleteGame = this.handleDeleteGame.bind(this);
   }
 
   handleNewTeamCreation(newTeam){
@@ -177,7 +191,6 @@ class App extends React.Component {
   }
 
   handleDeleteTeam(currentTeamId){
-    console.log(currentTeamId);
     var newMasterTeamsList = [];
     var copyMasterTeamsList = this.state.masterTeamsList.slice();
     copyMasterTeamsList.forEach((team) => {
@@ -186,6 +199,28 @@ class App extends React.Component {
       }
     });
     this.setState({masterTeamsList: newMasterTeamsList});
+  }
+
+  handleDeletePlayer(currentPlayerId){
+    var newMasterPlayersList = [];
+    var copyMasterPlayersList = this.state.masterPlayersList.slice();
+    copyMasterPlayersList.forEach((player) => {
+      if (player.id !== currentPlayerId) {
+        newMasterPlayersList.push(player);
+      }
+    });
+    this.setState({masterPlayersList: newMasterPlayersList});
+  }
+
+  handleDeleteGame(currentGameId){
+    var newMasterGamesList = [];
+    var copyMasterGamesList = this.state.masterGamesList.slice();
+    copyMasterGamesList.forEach((game) => {
+      if (game.id !== currentGameId) {
+        newMasterGamesList.push(game);
+      }
+    });
+    this.setState({masterGamesList: newMasterGamesList});
   }
 
   render(){
@@ -219,7 +254,9 @@ class App extends React.Component {
             onNewPlayerCreation={this.handleNewPlayerCreation}
             onNewGameCreation={this.handleNewGameCreation}
             currentRouterPath={props.location.pathname}
-            onDeleteTeam={this.handleDeleteTeam} />}  />
+            onDeleteTeam={this.handleDeleteTeam}
+            onDeletePlayer={this.handleDeletePlayer}
+            onDeleteGame={this.handleDeleteGame} />}  />
           <Route component={Error404} />
         </Switch>
       </div>

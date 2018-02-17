@@ -34,11 +34,11 @@ function AdminAccessAllowed(props) {
           <Route exact path='/admin/add-game'render={()=><AddGame gamesList={props.gamesList}
             onNewGameCreation={props.onNewGameCreation} />} />
           <Route exact path='/admin/edit-player'render={()=><EditPlayer playersList={props.playersList}
-            currentRouterPath={props.currentRouterPath} />} />
+            currentRouterPath={props.currentRouterPath} onDeletePlayer={props.onDeletePlayer} />} />
           <Route exact path='/admin/edit-team'render={()=><EditTeam teamsList={props.teamsList}
             currentRouterPath={props.currentRouterPath} onDeleteTeam={props.onDeleteTeam} />} />
           <Route exact path='/admin/edit-game'render={()=><EditGame gamesList={props.gamesList}
-            currentRouterPath={props.currentRouterPath} />} />
+            currentRouterPath={props.currentRouterPath} onDeleteGame={props.onDeleteGame} />} />
         </Switch>
       </div>
     </div>
@@ -53,7 +53,9 @@ AdminAccessAllowed.propTypes = {
   onNewPlayerCreation: PropTypes.func,
   onNewGameCreation: PropTypes.func,
   currentRouterPath: PropTypes.string,
-  onDeleteTeam: PropTypes.func
+  onDeleteTeam: PropTypes.func,
+  onDeletePlayer: PropTypes.func,
+  onDeleteGame: PropTypes.func
 };
 
 export default AdminAccessAllowed;

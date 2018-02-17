@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 
 function TeamsList(props){
-  console.log(props);
   return (
     <div style={{backgroundColor: 'white', opacity: '0.8', filter: 'alpha(opacity=50)', padding: '20px'}}>
       <div className="row">

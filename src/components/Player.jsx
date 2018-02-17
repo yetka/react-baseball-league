@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 import Shiluette from '../assets/images/shiluette.jpg';
 
 function Player(props){
-  return (
+  function handleDeletePlayerWhenClicked() {
+    props.onDeletePlayer(props.id);
+  }
+  const playerInformation =
     <div style={{padding: '50px'}} className="col-md-4">
       <div className="row">
         <div className="col-md-4">
@@ -21,8 +24,23 @@ function Player(props){
         <h5><strong>Team: </strong>{props.team}</h5>
         <h5><strong>Jersey Number: </strong>{props.jerseyNumber}</h5>
       </div>
-    </div>
-  );
+    </div>;
+
+  if (props.currentRouterPath === '/admin/edit-player'){
+    return (
+      <div>
+        {playerInformation}
+        <button>Edit</button>
+        <button onClick={() => {handleDeletePlayerWhenClicked();}}>Delete</button>
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        {playerInformation}
+      </div>
+    );
+  }
 }
 
 Player.propTypes = {
@@ -30,7 +48,8 @@ Player.propTypes = {
   age: PropTypes.number,
   position: PropTypes.string,
   team: PropTypes.string,
-  jerseyNumber: PropTypes.number
+  jerseyNumber: PropTypes.number,
+  onDeletePlayer: PropTypes.func
 };
 
 export default Player;

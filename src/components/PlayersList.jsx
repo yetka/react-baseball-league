@@ -14,7 +14,10 @@ function PlayersList(props){
             position={player.position}
             team={player.team}
             jerseyNumber={player.jerseyNumber}
-            key={i}/>
+            id={player.id}
+            key={player.id}
+            onDeletePlayer={props.onDeletePlayer}
+            currentRouterPath={props.currentRouterPath}/>
         )}
       </div>
     </div>
@@ -22,7 +25,9 @@ function PlayersList(props){
 }
 
 PlayersList.propTypes = {
-  playersList: PropTypes.array
+  playersList: PropTypes.array,
+  currentRouterPath: PropTypes.string,
+  onDeletePlayer: PropTypes.func
 };
 
 export default PlayersList;

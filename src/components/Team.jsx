@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 import BaseballSymbol from '../assets/images/symbol.jpg';
 
 function Team(props){
-  console.log(props);
   function handleDeleteTeamWhenClicked() {
-    // console.log(props);
     props.onDeleteTeam(props.id);
   }
 

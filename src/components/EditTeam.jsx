@@ -3,7 +3,6 @@ import TeamsList from './TeamsList';
 import PropTypes from 'prop-types';
 
 function EditTeam(props){
-  console.log(props);
   return (
     <div>
       <TeamsList teamsList={props.teamsList}
