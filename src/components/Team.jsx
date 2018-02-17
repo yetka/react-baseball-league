@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import BaseballSymbol from '../assets/images/symbol.jpg';
 
 function Team(props){
-  
+
   const teamInformation =
     <div style={{padding: '50px'}} className="col-md-4">
       <div className="row">
@@ -31,14 +31,14 @@ function Team(props){
     return (
       <div>
         {teamInformation}
-        <h1>admintest</h1>
+        <button>Edit</button>
+        <button>Delete</button>
       </div>
     );
   } else {
     return (
       <div>
         {teamInformation}
-        <h1>test</h1>
       </div>
     );
   }
