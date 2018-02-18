@@ -7,6 +7,10 @@ function Team(props){
     props.onDeleteTeam(props.id);
   }
 
+  function handleTeamToEdit() {
+    props.onTeamToEdit(props.id);
+  }
+
   const teamInformation =
     <div>
       <div className="row">
@@ -34,7 +38,7 @@ function Team(props){
     return (
       <div style={{padding: '50px'}} className="col-md-4">
         {teamInformation}
-        <button type="button" className="btn btn-warning">Edit</button>
+        <button onClick={() => {handleTeamToEdit();}} type="button" className="btn btn-warning">Edit</button>
         <button onClick={() => {handleDeleteTeamWhenClicked();}} type="button" className="btn btn-danger">Delete</button>
       </div>
     );
@@ -52,7 +56,8 @@ Team.propTypes = {
   manager: PropTypes.string,
   players: PropTypes.arrayOf(PropTypes.string),
   currentRouterPath: PropTypes.string,
-  onDeleteTeam: PropTypes.func
+  onDeleteTeam: PropTypes.func,
+  onTeamToEdit: PropTypes.func
 };
 
 export default Team;

@@ -9,15 +9,21 @@ class Admin extends React.Component {
     console.log(props);
     super(props);
     this.state = {
-      authentication: false
+      authentication: false,
+      currentTeamId: null
     };
     this.handleAuthenticationFormSubmission = this.handleAuthenticationFormSubmission.bind(this);
+    this.handleTeamToEdit = this.handleTeamToEdit.bind(this);
   }
 
   handleAuthenticationFormSubmission(login){
     if ((login.name === 'Admin') && (login.password === 'epicodus')) {
       this.setState({authentication: true});
     }
+  }
+
+  handleTeamToEdit(id) {
+    this.setState({currentTeamId: id});
   }
 
   render(){
@@ -29,7 +35,10 @@ class Admin extends React.Component {
         currentRouterPath={this.props.currentRouterPath}
         onDeleteTeam={this.props.onDeleteTeam}
         onDeletePlayer={this.props.onDeletePlayer}
-        onDeleteGame={this.props.onDeleteGame} />;
+        onDeleteGame={this.props.onDeleteGame}
+        onTeamEdition={this.props.onTeamEdition}
+        onTeamToEdit={this.handleTeamToEdit}
+        teamToEditId={this.state.currentTeamId} />;
     } else {
       currentlyVisibleContent = <AdminAccessDenied onAuthenticationFormSubmission={this.handleAuthenticationFormSubmission}/>;
     }
@@ -51,7 +60,8 @@ Admin.propTypes = {
   currentRouterPath: PropTypes.string,
   onDeleteTeam: PropTypes.func,
   onDeletePlayer: PropTypes.func,
-  onDeleteGame: PropTypes.func
+  onDeleteGame: PropTypes.func,
+  onTeamEdition: PropTypes.func
 };
 
 export default Admin;

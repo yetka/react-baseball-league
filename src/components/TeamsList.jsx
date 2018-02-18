@@ -15,7 +15,8 @@ function TeamsList(props){
             id={team.id}
             key={team.id}
             onDeleteTeam={props.onDeleteTeam}
-            currentRouterPath={props.currentRouterPath}/>
+            currentRouterPath={props.currentRouterPath}
+            onTeamToEdit={props.onTeamToEdit}/>
         )}
       </div>
     </div>
@@ -25,7 +26,8 @@ function TeamsList(props){
 TeamsList.propTypes = {
   teamsList: PropTypes.array,
   currentRouterPath: PropTypes.string,
-  onDeleteTeam: PropTypes.func
+  onDeleteTeam: PropTypes.func,
+  onTeamToEdit: PropTypes.func
 };
 
 

@@ -169,6 +169,7 @@ class App extends React.Component {
     this.handleDeleteTeam = this.handleDeleteTeam.bind(this);
     this.handleDeletePlayer = this.handleDeletePlayer.bind(this);
     this.handleDeleteGame = this.handleDeleteGame.bind(this);
+    this.handleTeamEdition = this.handleTeamEdition.bind(this);
   }
 
   handleNewTeamCreation(newTeam){
@@ -223,6 +224,19 @@ class App extends React.Component {
     this.setState({masterGamesList: newMasterGamesList});
   }
 
+  handleTeamEdition(teamToEdit) {
+    console.log(teamToEdit);
+    var newMasterTeamsList = this.state.masterTeamsList.slice();
+    newMasterTeamsList.forEach((team) => {
+      if (team.id === teamToEdit.id) {
+        team.name = teamToEdit.name;
+        team.manager = teamToEdit.manager;
+        team.players = teamToEdit.players.split(', ');
+      }
+    });
+    this.setState({masterTeamsList: newMasterTeamsList});
+  }
+
   render(){
     return (
       <div className="container">
@@ -256,7 +270,8 @@ class App extends React.Component {
             currentRouterPath={props.location.pathname}
             onDeleteTeam={this.handleDeleteTeam}
             onDeletePlayer={this.handleDeletePlayer}
-            onDeleteGame={this.handleDeleteGame} />}  />
+            onDeleteGame={this.handleDeleteGame}
+            onTeamEdition={this.handleTeamEdition} />}  />
           <Route component={Error404} />
         </Switch>
       </div>

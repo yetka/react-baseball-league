@@ -28,17 +28,30 @@ function AdminAccessAllowed(props) {
       </div>
       <div className="col-md-10">
         <Switch>
-          <Route exact path='/admin/add-player'render={()=><AddPlayer playersList={props.playersList}
+          <Route exact path='/admin/add-player'render={()=><AddPlayer
+            playersList={props.playersList}
             onNewPlayerCreation={props.onNewPlayerCreation} />} />
-          <Route exact path='/admin/add-team'render={()=><AddTeam teamsList={props.teamsList} onNewTeamCreation={props.onNewTeamCreation}  />} />
-          <Route exact path='/admin/add-game'render={()=><AddGame gamesList={props.gamesList}
+          <Route exact path='/admin/add-team'render={()=><AddTeam
+            teamsList={props.teamsList}
+            onNewTeamCreation={props.onNewTeamCreation}  />} />
+          <Route exact path='/admin/add-game'render={()=><AddGame
+            gamesList={props.gamesList}
             onNewGameCreation={props.onNewGameCreation} />} />
-          <Route exact path='/admin/edit-player'render={()=><EditPlayer playersList={props.playersList}
-            currentRouterPath={props.currentRouterPath} onDeletePlayer={props.onDeletePlayer} />} />
-          <Route exact path='/admin/edit-team'render={()=><EditTeam teamsList={props.teamsList}
-            currentRouterPath={props.currentRouterPath} onDeleteTeam={props.onDeleteTeam} />} />
-          <Route exact path='/admin/edit-game'render={()=><EditGame gamesList={props.gamesList}
-            currentRouterPath={props.currentRouterPath} onDeleteGame={props.onDeleteGame} />} />
+          <Route exact path='/admin/edit-player'render={()=><EditPlayer
+            playersList={props.playersList}
+            currentRouterPath={props.currentRouterPath}
+            onDeletePlayer={props.onDeletePlayer} />} />
+          <Route exact path='/admin/edit-team'render={()=><EditTeam
+            teamsList={props.teamsList}
+            currentRouterPath={props.currentRouterPath}
+            onDeleteTeam={props.onDeleteTeam}
+            onTeamEdition={props.onTeamEdition}
+            onTeamToEdit={props.onTeamToEdit}
+            teamToEditId={props.teamToEditId} />} />
+          <Route exact path='/admin/edit-game'render={()=><EditGame
+            gamesList={props.gamesList}
+            currentRouterPath={props.currentRouterPath}
+            onDeleteGame={props.onDeleteGame} />} />
         </Switch>
       </div>
     </div>
@@ -55,7 +68,10 @@ AdminAccessAllowed.propTypes = {
   currentRouterPath: PropTypes.string,
   onDeleteTeam: PropTypes.func,
   onDeletePlayer: PropTypes.func,
-  onDeleteGame: PropTypes.func
+  onDeleteGame: PropTypes.func,
+  onTeamEdition: PropTypes.func,
+  teamToEditId: PropTypes.string,
+  onTeamToEdit: PropTypes.func
 };
 
 export default AdminAccessAllowed;
