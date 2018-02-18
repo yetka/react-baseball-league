@@ -229,9 +229,15 @@ class App extends React.Component {
     var newMasterTeamsList = this.state.masterTeamsList.slice();
     newMasterTeamsList.forEach((team) => {
       if (team.id === teamToEdit.id) {
-        team.name = teamToEdit.name;
-        team.manager = teamToEdit.manager;
-        team.players = teamToEdit.players.split(', ');
+        if (teamToEdit.name) {
+          team.name = teamToEdit.name;
+        }
+        if (teamToEdit.manager) {
+          team.manager = teamToEdit.manager;
+        }
+        if (teamToEdit.players) {
+          team.players = teamToEdit.players.split(', ');
+        }
       }
     });
     this.setState({masterTeamsList: newMasterTeamsList});
